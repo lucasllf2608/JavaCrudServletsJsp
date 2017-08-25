@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.PreparedStatement;
+
 import br.com.agenda.util.ConexaoMySql;
 
 public class ContatoDao {
@@ -14,7 +16,23 @@ public class ContatoDao {
 		return connetion = ConexaoMySql.getConexao();
 	}
 
-	public void cadastraContato() {
+	public void cadastraContato(Contato contato) {
+		conexao();
+		
+		try {
+			String sql = "insert into contato (nome, email, telefone) values (?,?,?)";
+			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
+			stmt.setString(1, contato.getNome());
+			stmt.setString(2, contato.getEmail());
+			stmt.setString(3, contato.getTelefone());
+			stmt.execute();
+			stmt.close();
+			
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 

@@ -14,5 +14,12 @@ public class ContatoService {
 		ArrayList<Contato> contato = new ArrayList<>();
 		return  contato = dao.listarContatos();
 	}
+	
+	
+	public void cadastraContato(Contato contato){
+		
+		dao.cadastraContato(contato);
+		 
+	}
 
 }

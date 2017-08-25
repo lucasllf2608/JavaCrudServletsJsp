@@ -42,7 +42,7 @@ public class Contato {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getNome()+"-"+getEmail();
+		return getNome()+"-"+getEmail()+"-"+getTelefone();
 	}
 
 }

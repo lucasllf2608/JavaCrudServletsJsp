@@ -33,41 +33,44 @@ public class ContatoController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-
-		String nome = request.getParameter("teste");
+		
 		String opcao = request.getParameter("opcao");
+		
+		Contato c = new Contato();
+		
+		String nome = request.getParameter("nome");
+		String email = request.getParameter("email");
+		String telefone = request.getParameter("telefone");
+		
+		c.setEmail(nome);
+		c.setNome(nome);
+		c.setTelefone(telefone);
+		
+		out.print(c.toString());
+		
 
-		if (opcao == "cadastrar") {
+		if (opcao {
 			
-			out.println("hello world!");
-			out.println(opcao);
-			out.println(nome);
-			out.println("Cadastrar");
+//			
+//			c.setNome(request.getParameter("nome"));
+//			c.setEmail(request.getParameter("email"));
+//			c.setTelefone(request.getParameter("telefone"));
+			cs.cadastraContato(c);
+
 			System.out.println("Cadastrar");
 
 
 
-		} else if (opcao == "excluir") {
+		} else if (opcao == 3) {
 			
-			out.println("hello world!");
-			out.println(opcao);
-			out.println(nome);
 			out.println("excluir");
 			System.out.println("Excluir");
 
 
 		} else {
 			
-			out.println("hello world!");
-			out.println(opcao);
-			out.println(nome);
-			out.println("Editar");
 			System.out.println("Editar");
 		}
-
-		out.println("hello world!");
-		out.println(opcao);
-		out.println(nome);
 
 	}
 	

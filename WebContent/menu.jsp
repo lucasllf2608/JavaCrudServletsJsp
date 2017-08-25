@@ -28,14 +28,15 @@
 			<td>Nome</td>
 			<td>Email</td>
 			<td>Telefone</td>
-		</tr>
+			<td colspan="2">opcao</td>
+		</tr> 
 		<c:forEach var="contato" items="${contatos.listarContatos()}">
 		<tr>
 			<td>${contato.nome}</td>
 			<td>${contato.email}</td>
 			<td>${contato.telefone}</td>
-			<td>editar</td>
-			<td>excluir</td>
+			<td><a href="">editar</a></td>
+			<td><a href="">excluir</a></td>
 		</tr>
 		</c:forEach>
 	</table>	
