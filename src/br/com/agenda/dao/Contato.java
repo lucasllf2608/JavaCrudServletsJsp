@@ -2,10 +2,10 @@ package br.com.agenda.dao;
 
 public class Contato {
 
+	private String nome;
 	private String email;
 	private String telefone;
 	private int id;
-	private String nome;
 
 	public String getNome() {
 		return nome;

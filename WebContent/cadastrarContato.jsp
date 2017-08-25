@@ -5,24 +5,23 @@
 <head>
 <link href="css/css.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript"src="js/js.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 <title>CRUD::Agenda</title>
 </head>
 <body>
 	<form method="post" action="ContatoController">
-
+		<input type="hidden" value="editar" name="opcao" id="opcao" />
 		<label>Nome:</label>
 		<input type="text" name="teste" id="teste" /> 
-		<label>Email:</label>
-		<input type="text" name="teste" id="teste" />
-		<label>Telefone:</label>
-		<input type="text" name="teste" id="teste" />
-		</br>
-		<input type="submit" value="Cadastar">	
-<a href="menu.jsp">voltarr</a>
-			<button onclick="voltarMenu()">Voltar</button>
+		<label>Email:</label> 
+		<input type="text" name="teste" id="teste" /> 
+		<label>Telefone:</label> 
+		<input type="text" name="teste" id="teste" /> 
+		</br> 
+		<input type="submit" value="Cadastar">
 	</form>
-	
+	</br>		
+	<button onclick="voltarMenu()">voltar</button>
 
 </body>
 </html>

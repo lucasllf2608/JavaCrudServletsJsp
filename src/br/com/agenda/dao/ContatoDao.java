@@ -13,26 +13,24 @@ public class ContatoDao {
 		Connection connetion;
 		return connetion = ConexaoMySql.getConexao();
 	}
-	
-	
-	public void cadastraContato(){
-		
+
+	public void cadastraContato() {
+
 	}
-	
-	public static ArrayList<Contato> listar(){
-		
+
+	public static ArrayList<Contato> listarContatos() {
+
 		ArrayList<Contato> contato = new ArrayList<>();
-		
-	
+
 		conexao();
-		
+
 		try {
-			
-			String sql ="SELECT * FROM  contato";
-			
+
+			String sql = "SELECT * FROM  contato";
+
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
-			while(rs.next()){
+			while (rs.next()) {
 				Contato c = new Contato();
 				c.setId(rs.getInt("id"));
 				c.setNome(rs.getString("nome"));
@@ -40,15 +38,13 @@ public class ContatoDao {
 				c.setTelefone(rs.getString("telefone"));
 				contato.add(c);
 			}
-			
-			
-		
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 		return contato;
-		
+
 	}
 
 }
