@@ -25,6 +25,7 @@
 	<jsp:useBean id="contatos" class="br.com.agenda.controller.ContatoController"></jsp:useBean>
 	<table border="1">
 		<tr>
+			<td>Id</td>
 			<td>Nome</td>
 			<td>Email</td>
 			<td>Telefone</td>
@@ -32,11 +33,12 @@
 		</tr> 
 		<c:forEach var="contato" items="${contatos.listarContatos()}">
 		<tr>
+			<td>${contato.id}</td>
 			<td>${contato.nome}</td>
 			<td>${contato.email}</td>
 			<td>${contato.telefone}</td>
 			<td><a href="">editar</a></td>
-			<td><a href="">excluir</a></td>
+			<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>">excluir</a></td>
 		</tr>
 		</c:forEach>
 	</table>	

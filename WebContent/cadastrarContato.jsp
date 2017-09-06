@@ -10,7 +10,7 @@
 </head>
 <body>
 	<form method="post" action="ContatoController">
-		<input type="hidden" value="1" name="opcao" id="opcao" />
+		<input type="hidden" value="cadastrar" name="opcao" id="opcao" />
 		<label>Nome:</label>
 		<input type="text" name="nome" id="nome" /> 
 		<label>Email:</label> 
@@ -18,7 +18,7 @@
 		<label>Telefone:</label> 
 		<input type="text" name="telefone" id="telefone" /> 
 		</br> 
-		<input type="submit" value="Cadastar">
+		<input type="submit" value="Cadastrar">
 	</form>
 	</br>		
 	<button onclick="voltarMenu()">voltar</button>

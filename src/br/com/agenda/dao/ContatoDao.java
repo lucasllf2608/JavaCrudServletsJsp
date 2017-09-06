@@ -18,7 +18,7 @@ public class ContatoDao {
 
 	public void cadastraContato(Contato contato) {
 		conexao();
-		
+
 		try {
 			String sql = "insert into contato (nome, email, telefone) values (?,?,?)";
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
@@ -27,12 +27,10 @@ public class ContatoDao {
 			stmt.setString(3, contato.getTelefone());
 			stmt.execute();
 			stmt.close();
-			
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 
 	}
 
@@ -62,6 +60,26 @@ public class ContatoDao {
 		}
 
 		return contato;
+
+	}
+
+	public void excluirCadastro(int id) {
+		
+		System.out.println("chegou no dao");
+		conexao();
+
+		try {
+			
+			String sql = "delete from contato where id = ?";
+			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
+			stmt.setInt(1, id);
+			stmt.execute();
+			stmt.close();
+			conexao().close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 

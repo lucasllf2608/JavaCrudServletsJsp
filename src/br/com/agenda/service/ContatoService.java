@@ -21,5 +21,12 @@ public class ContatoService {
 		dao.cadastraContato(contato);
 		 
 	}
+	
+	
+	public void excluirCadastro(String id){
+		
+		System.out.println("chegou no service");
+		dao.excluirCadastro(Integer.parseInt(id));
+	}
 
 }

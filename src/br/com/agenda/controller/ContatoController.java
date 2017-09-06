@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,42 +36,43 @@ public class ContatoController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String opcao = request.getParameter("opcao");
-		
-		Contato c = new Contato();
-		
-		String nome = request.getParameter("nome");
-		String email = request.getParameter("email");
-		String telefone = request.getParameter("telefone");
-		
-		c.setEmail(nome);
-		c.setNome(nome);
-		c.setTelefone(telefone);
-		
-		out.print(c.toString());
+		String direcionar = "";
 		
 
-		if (opcao {
-			
-//			
-//			c.setNome(request.getParameter("nome"));
-//			c.setEmail(request.getParameter("email"));
-//			c.setTelefone(request.getParameter("telefone"));
+		
+
+		if (opcao.equals("cadastrar")){
+						
+			Contato c = new Contato();
+			c.setNome(request.getParameter("nome"));
+			c.setEmail(request.getParameter("email"));
+			c.setTelefone(request.getParameter("telefone"));
 			cs.cadastraContato(c);
 
+			out.print(c.toString());
 			System.out.println("Cadastrar");
+			direcionar = "menu.jsp";
 
 
 
-		} else if (opcao == 3) {
+		} else if (opcao.equals("excluir")) {
 			
-			out.println("excluir");
-			System.out.println("Excluir");
-
+			System.out.println("chegou para excluir");
+			out.println(request.getParameter("id"));
+			String id = request.getParameter("id");
+			cs.excluirCadastro(id);
+//			System.out.println("Excluir");
+//			direcionar = "menu.jsp";
 
 		} else {
 			
 			System.out.println("Editar");
 		}
+		
+		
+		
+		RequestDispatcher view = request.getRequestDispatcher(direcionar);
+		view.forward(request, response);
 
 	}
 	
