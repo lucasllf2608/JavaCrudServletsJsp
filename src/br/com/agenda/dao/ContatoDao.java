@@ -64,19 +64,18 @@ public class ContatoDao {
 	}
 
 	public void excluirCadastro(int id) {
-		
-		System.out.println("chegou no dao");
+
 		conexao();
 
 		try {
-			
+
 			String sql = "delete from contato where id = ?";
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
 			stmt.setInt(1, id);
 			stmt.execute();
 			stmt.close();
 			conexao().close();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

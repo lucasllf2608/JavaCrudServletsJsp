@@ -1,0 +1,15 @@
+
+
+Criar a tabela
+
+create table contato( id int PRIMARY key AUTO_INCREMENT, nome varchar(255) not null, email varchar(255) not null, telefone varchar(255));
+
+
+Popular a tabela contato
+
+insert into contato (id, nome, email, telefone) values (1, "lucas", "lucas@email.com", "8534595959");
+insert into contato (id, nome, email, telefone) values (2, "Bruce Wayne", "batman@email.com", "853455588");
+insert into contato (id, nome, email, telefone) values (3, "Oliver Queen", "greenarrow@email.com", "8534595959");
+insert into contato (id, nome, email, telefone) values (4, "Barry Allen", "theflash@email.com", "8534595522");
+insert into contato (id, nome, email, telefone) values (5, "Hal Jordan", "laternaverde@email.com", "8534595959");
+insert into contato (id, nome, email, telefone) values (6, "Arthur Curry", "aquamans@email.com", "8534595959");

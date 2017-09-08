@@ -37,7 +37,7 @@
 			<td>${contato.nome}</td>
 			<td>${contato.email}</td>
 			<td>${contato.telefone}</td>
-			<td><a href="">editar</a></td>
+			<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>">editar</a></td>
 			<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>">excluir</a></td>
 		</tr>
 		</c:forEach>
