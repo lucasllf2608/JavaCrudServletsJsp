@@ -4,8 +4,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.agenda.util.ConexaoMySql"%>
 <%@page import="br.com.agenda.dao.Contato"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -37,7 +36,7 @@
 			<td>${contato.nome}</td>
 			<td>${contato.email}</td>
 			<td>${contato.telefone}</td>
-			<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>">editar</a></td>
+			<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>&nome=<c:out value="${contato.nome} "></c:out>&email=<c:out value="${contato.email} "></c:out>&telefone=<c:out value="${contato.telefone}"></c:out>">editar</a></td>
 			<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>">excluir</a></td>
 		</tr>
 		</c:forEach>

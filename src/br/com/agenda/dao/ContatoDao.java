@@ -81,5 +81,24 @@ public class ContatoDao {
 		}
 
 	}
+	
+	
+	public void consultarContatoPorId(){
+		
+		conexao();
+		
+		try {
+			
+			
+			String sql = "select * from contato where id =?";
+			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
+			stmt.setInt(0, 1);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
 
 }
