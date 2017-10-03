@@ -11,6 +11,8 @@
 <title>CRUD::Agenda</title>
 </head>
 <body>
+teste
+
 	<form method="post" action="ContatoController">
 		<input type="hidden" value="cadastrar" name="opcao" id="opcao" />
 		<label>Nome:</label>

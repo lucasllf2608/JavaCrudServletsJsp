@@ -66,7 +66,11 @@ public class ContatoController extends HttpServlet {
 
 		} else {
 			
-			System.out.println("Editar");
+			String id = request.getParameter("id");
+			System.out.println(id);
+			Contato contato = cs.consultarContatoPorId(id);
+			System.out.println(contato.toString());
+			request.setAttribute("contato", contato);
 			direcionar = "cadastrarContato.jsp";
 			
 			

@@ -23,8 +23,11 @@ public class ContatoService {
 		dao.excluirCadastro(Integer.parseInt(id));
 	}
 
-	public void consultarContatoPorId() {
-		dao.consultarContatoPorId();
+	public Contato consultarContatoPorId(String id) {
+		return dao.consultarContatoPorId(id);
+		
+		
+		
 	}
 
 }

@@ -81,24 +81,35 @@ public class ContatoDao {
 		}
 
 	}
-	
-	
-	public void consultarContatoPorId(){
-		
+
+	public Contato consultarContatoPorId(String id) {
+
 		conexao();
-		
+
+		Contato contato = new Contato();
 		try {
-			
-			
+
 			String sql = "select * from contato where id =?";
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
-			stmt.setInt(0, 1);
-			
+			stmt.setInt(0, Integer.parseInt(id));
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				if (rs.getInt("id") == Integer.parseInt(id)) {
+					contato.setId(rs.getInt("id"));
+					contato.setNome(rs.getString("nome"));
+					contato.setEmail(rs.getString("email"));
+					contato.setTelefone(rs.getString("telefone"));
+					System.out.println("Pessoa encontrada...");
+				}
+
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+		return contato;
+
 	}
-	
 
 }
