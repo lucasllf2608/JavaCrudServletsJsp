@@ -24,10 +24,10 @@ public class ContatoService {
 	}
 
 	public Contato consultarContatoPorId(String id) {
-		return dao.consultarContatoPorId(id);
-		
-		
-		
+
+		Contato contato = dao.consultarContatoPorId(id);
+		return contato;
+
 	}
 
 }

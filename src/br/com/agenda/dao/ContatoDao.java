@@ -89,9 +89,9 @@ public class ContatoDao {
 		Contato contato = new Contato();
 		try {
 
-			String sql = "select * from contato where id =?";
+			String sql = "select * from contato c where c.id = ?";
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
-			stmt.setInt(0, Integer.parseInt(id));
+			stmt.setInt(1, Integer.parseInt(id));
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 
