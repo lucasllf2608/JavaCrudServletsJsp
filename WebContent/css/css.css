@@ -11,6 +11,9 @@ table {
 }
 
 th, td {
+	
+	font-family: verdana;
+	font-size: 13px;
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -24,6 +27,8 @@ input{
 
 
 button{
+	font-family: verdana;
+	font-size: 15px;
 	background-color: #00aaa6;
 }
 

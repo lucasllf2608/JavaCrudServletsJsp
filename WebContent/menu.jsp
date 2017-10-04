@@ -14,11 +14,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script type="text/javascript" src="js/js.js"></script>
 	<link href="css/css.css" rel="stylesheet" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Menu</title>
 	</head>
 	<body>
 	
-		<button onclick="acessarCadastro()">Novo</button>
+	
+		<button onclick="acessarCadastro()">Novo Contato  <i class="fa fa-address-book"></i></button>
 		<hr>
 	
 	
