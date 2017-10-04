@@ -17,15 +17,17 @@
 		<input type="hidden" value="cadastrar" name="opcao" id="opcao" />
 		<label>Nome:</label>
 		<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>">
+		</br>
 		<label>Email:</label> 
-		<input type="email" name="email" id="email" value=""/> 
+		<input type="email" name="email" id="email" value=""/>
+		</br> 
 		<label>Telefone:</label> 
 		<input type="text" name="telefone" id="telefone" value="" /> 
 		</br> 
 		<input type="submit" value="Cadastrar">
 	</form>
 	</br>		
-	<button onclick="voltarMenu()">voltar</button>
+	<button id="cancelar" onclick="voltarMenu()">voltar</button>
 
 </body>
 </html>

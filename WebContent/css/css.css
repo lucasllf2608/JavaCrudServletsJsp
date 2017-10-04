@@ -1,9 +1,8 @@
 @CHARSET "UTF-8";
 
 label{
-	
-	
-	
+	font-family: verdana;
+	font-size: 13px;
 }
 
 table {
@@ -16,3 +15,20 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
+
+input{
+	
+	width: 20%;
+}
+
+
+button{
+	background-color: #00aaa6;
+}
+
+input[type=submit]{
+	 background-color: #00aaa6;
+}
+
+
