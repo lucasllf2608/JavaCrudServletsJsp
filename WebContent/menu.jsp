@@ -13,6 +13,7 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script type="text/javascript" src="js/js.js"></script>
+	<link href="css/css.css" rel="stylesheet" >
 	<title>Menu</title>
 	</head>
 	<body>
@@ -22,13 +23,13 @@
 	
 	
 	<jsp:useBean id="contatos" class="br.com.agenda.controller.ContatoController"></jsp:useBean>
-	<table border="1">
+	<table>
 		<tr>
-			<td>Id</td>
-			<td>Nome</td>
-			<td>Email</td>
-			<td>Telefone</td>
-			<td colspan="2">opcao</td>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Telefone</th>
+			<th colspan="2">opcao</th>
 		</tr> 
 		<c:forEach var="contato" items="${contatos.listarContatos()}">
 		<tr>
