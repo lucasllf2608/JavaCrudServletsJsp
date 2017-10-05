@@ -14,21 +14,31 @@
 <body>
 
 
+
+
 	<form method="post" action="ContatoController">
-		<input type="hidden" value="cadastrar" name="opcao" id="opcao" />
-		<label>Nome:</label>
-		<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>">
-		</br>
-		<label>Email:</label> 
-		<input type="email" name="email" id="email" value=""/>
-		</br> 
-		<label>Telefone:</label> 
-		<input type="text" name="telefone" id="telefone" value="" /> 
-		</br> 
-		<input type="submit" value="Cadastrar">
+		<input type="hidden" name="opcao" id="opcao"  value="<c:out value="${opcao}"/>">
+			<div>
+				<label>Nome:    </label>
+				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>">
+			</div>
+			<div>
+				<label>Email:</label> 
+				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>"/>
+			</div>
+			<div>
+				<label>Telefone:</label> 
+				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>" /> 
+			</div>
+			</br>
+			</br> 
+			</br> 
+	<button type="submit" class="btn btn-primary">Cadastrar  <i class="fa fa-plus-circle"></i> </button>		
 	</form>
+	
+	<button id="cancelar" onclick="voltarMenu()">voltar <i class="fa fa-reply"></i></button>
 	</br>		
-	<button id="cancelar" onclick="voltarMenu()">voltar</button>
+	
 
 </body>
 </html>

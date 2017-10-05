@@ -111,5 +111,20 @@ public class ContatoDao {
 		return contato;
 
 	}
+	
+	
+	public void atualizarContato(Contato contato){
+		
+		conexao();
+		try {
+			
+			String sql="";
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
 
 }

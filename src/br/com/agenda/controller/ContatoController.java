@@ -41,21 +41,31 @@ public class ContatoController extends HttpServlet {
 
 		
 
-		if (opcao.equals("cadastrar")){
+		if (opcao.equals("editar")){
 						
-			Contato c = new Contato();
+			System.out.println(opcao);
+			String id = request.getParameter("id");
+			System.out.println(id);
+			Contato contato = cs.consultarContatoPorId(id);
+			System.out.println(contato.toString());
+			request.setAttribute("opcao", "atualizar");
+			request.setAttribute("contato", contato);
+			direcionar = "cadastrarContato.jsp";
+
+
+
+		} else if(opcao.equals("atualizar")){
+			
+			Contato c = new Contato();	
+			String id = request.getParameter("id");
+			System.out.println(id);			
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
-			c.setTelefone(request.getParameter("telefone"));
-			cs.cadastraContato(c);
-
-			out.print(c.toString());
-			System.out.println("Cadastrar");
+			c.setTelefone(request.getParameter("telefone"));			
+			cs.atualizarContato(c);
 			direcionar = "menu.jsp";
-
-
-
-		} else if (opcao.equals("excluir")) {
+			
+		}else if (opcao.equals("excluir")) {
 			
 			System.out.println("chegou para excluir");
 			out.println(request.getParameter("id"));
@@ -64,14 +74,18 @@ public class ContatoController extends HttpServlet {
 //			System.out.println("Excluir");
 //			direcionar = "menu.jsp";
 
-		} else {
+		}else {
 			
-			String id = request.getParameter("id");
-			System.out.println(id);
-			Contato contato = cs.consultarContatoPorId(id);
-			System.out.println(contato.toString());
-			request.setAttribute("contato", contato);
-			direcionar = "cadastrarContato.jsp";
+			
+			Contato c = new Contato();	
+			c.setNome(request.getParameter("nome"));
+			c.setEmail(request.getParameter("email"));
+			c.setTelefone(request.getParameter("telefone"));
+			cs.cadastraContato(c);
+			out.print(c.toString());
+			System.out.println("Cadastrar");
+			direcionar = "menu.jsp";
+		
 			
 			
 		}

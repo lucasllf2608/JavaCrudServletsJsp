@@ -29,5 +29,12 @@ public class ContatoService {
 		return contato;
 
 	}
+	
+	
+	public void atualizarContato(Contato contato){
+		dao.atualizarContato(contato);
+		
+	}
+	
 
 }
