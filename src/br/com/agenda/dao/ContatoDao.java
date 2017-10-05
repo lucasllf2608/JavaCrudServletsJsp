@@ -27,6 +27,7 @@ public class ContatoDao {
 			stmt.setString(3, contato.getTelefone());
 			stmt.execute();
 			stmt.close();
+			conexao().close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,6 +103,9 @@ public class ContatoDao {
 					contato.setTelefone(rs.getString("telefone"));
 					System.out.println("Pessoa encontrada...");
 				}
+				
+				
+				conexao().close();
 
 			}
 
@@ -118,10 +122,18 @@ public class ContatoDao {
 		conexao();
 		try {
 			
-			String sql="";
+			String sql="update contato set nome = ?, email = ?, telefone = ? where id = ?";
+			
+			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
+			stmt.setString(1, contato.getNome());
+			stmt.setString(2, contato.getEmail());
+			stmt.setString(3, contato.getTelefone());
+			stmt.setInt(4, contato.getId());
+			stmt.execute();
+			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 	}

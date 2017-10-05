@@ -18,6 +18,7 @@
 
 	<form method="post" action="ContatoController">
 		<input type="hidden" name="opcao" id="opcao"  value="<c:out value="${opcao}"/>">
+		<input type="hidden" name="id" id="id"  value="<c:out value="${id}"/>">
 			<div>
 				<label>Nome:    </label>
 				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>">

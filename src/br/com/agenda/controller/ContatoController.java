@@ -48,6 +48,7 @@ public class ContatoController extends HttpServlet {
 			System.out.println(id);
 			Contato contato = cs.consultarContatoPorId(id);
 			System.out.println(contato.toString());
+			request.setAttribute("id", id);
 			request.setAttribute("opcao", "atualizar");
 			request.setAttribute("contato", contato);
 			direcionar = "cadastrarContato.jsp";
@@ -58,10 +59,12 @@ public class ContatoController extends HttpServlet {
 			
 			Contato c = new Contato();	
 			String id = request.getParameter("id");
-			System.out.println(id);			
+			System.out.println(id);	
+			c.setId(Integer.parseInt(request.getParameter("id")));
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
-			c.setTelefone(request.getParameter("telefone"));			
+			c.setTelefone(request.getParameter("telefone"));	
+			System.out.println(toString());
 			cs.atualizarContato(c);
 			direcionar = "menu.jsp";
 			
@@ -71,8 +74,6 @@ public class ContatoController extends HttpServlet {
 			out.println(request.getParameter("id"));
 			String id = request.getParameter("id");
 			cs.excluirCadastro(id);
-//			System.out.println("Excluir");
-//			direcionar = "menu.jsp";
 
 		}else {
 			

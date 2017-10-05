@@ -20,6 +20,9 @@
 	<body>
 	
 	
+	<h2>Agenda</h2>
+	
+	
 		<button onclick="acessarCadastro()">Novo Contato  <i class="fa fa-address-book"></i></button>
 		<hr>
 	
@@ -31,7 +34,7 @@
 			<th>Nome</th>
 			<th>Email</th>
 			<th>Telefone</th>
-			<th colspan="2">opcao</th>
+			<th colspan="2">op&ccedil;&atilde;o</th>
 		</tr> 
 		<c:forEach var="contato" items="${contatos.listarContatos()}">
 		<tr>
@@ -39,8 +42,8 @@
 			<td>${contato.nome}</td>
 			<td>${contato.email}</td>
 			<td>${contato.telefone}</td>
-			<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>&nome=<c:out value="${contato.nome} "></c:out>&email=<c:out value="${contato.email} "></c:out>&telefone=<c:out value="${contato.telefone}"></c:out>">editar</a></td>
-			<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>">excluir</a></td>
+			<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>&nome=<c:out value="${contato.nome} "></c:out>&email=<c:out value="${contato.email} "></c:out>&telefone=<c:out value="${contato.telefone}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
+			<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
 		</tr>
 		</c:forEach>
 	</table>	
