@@ -79,11 +79,16 @@ public class ContatoController extends HttpServlet {
 			
 			
 			Contato c = new Contato();	
+			
+			
+			
+			
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
+			
 			cs.cadastraContato(c);
-			out.print(c.toString());
+			
 			System.out.println("Cadastrar");
 			direcionar = "menu.jsp";
 		

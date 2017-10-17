@@ -16,17 +16,59 @@
 	<link href="css/css.css" rel="stylesheet" >
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Menu</title>
+	<style type="text/css">
+	
+#menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #00aaa6;
+}
+
+li {
+	font-family: verdana;
+	font-size: 13px;
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D3D3D3;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+	
+	
+	</style>
+	
 	</head>
 	<body>
 	
 	
 	<h2>Agenda</h2>
 	
+	<ul id="menu">
+		<li><a href="menu.jsp">Menu</a></li>
+		<li><a href="cadastrarContato.jsp">Novo Contato</a></li>
+	</ul>
 	
-		<button onclick="acessarCadastro()">Novo Contato  <i class="fa fa-address-book"></i></button>
-		<hr>
-	
-	
+		
+	<hr>
 	<jsp:useBean id="contatos" class="br.com.agenda.controller.ContatoController"></jsp:useBean>
 	<table>
 		<tr>

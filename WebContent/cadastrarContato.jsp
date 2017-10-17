@@ -21,15 +21,15 @@
 		<input type="hidden" name="id" id="id"  value="<c:out value="${id}"/>">
 			<div>
 				<label>Nome:    </label>
-				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>">
+				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>" required>
 			</div>
 			<div>
 				<label>Email:</label> 
-				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>"/>
+				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>" required/>
 			</div>
 			<div>
 				<label>Telefone:</label> 
-				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>" /> 
+				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>" required /> 
 			</div>
 			</br>
 			</br> 

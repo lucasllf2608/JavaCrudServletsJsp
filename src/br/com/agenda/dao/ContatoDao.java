@@ -122,7 +122,7 @@ public class ContatoDao {
 		conexao();
 		try {
 			
-			String sql="update contato set nome = ?, email = ?, telefone = ? where id = ?";
+			String sql="update contato nome = ?, email = ?, telefone = ? where id = ?";
 			
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
 			stmt.setString(1, contato.getNome());
