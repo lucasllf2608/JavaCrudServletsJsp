@@ -20,16 +20,26 @@ th, td {
 }
 
 
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+
 input{
 	
 	width: 20%;
 }
 
 
-button{
-	font-family: verdana;
-	font-size: 15px;
-	background-color: #00aaa6;
+button {
+    background-color: #00aaa6; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
 }
 
 input[type=submit]{
@@ -41,6 +51,7 @@ h2{
 	font-family:verdana;	
 }
 
-
-
+input[type=text]:focus {
+    background-color: lightblue;
+}
 

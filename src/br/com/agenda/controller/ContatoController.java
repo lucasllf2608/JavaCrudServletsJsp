@@ -38,9 +38,6 @@ public class ContatoController extends HttpServlet {
 		String opcao = request.getParameter("opcao");
 		String direcionar = "";
 		
-
-		
-
 		if (opcao.equals("editar")){
 						
 			System.out.println(opcao);
@@ -52,8 +49,6 @@ public class ContatoController extends HttpServlet {
 			request.setAttribute("opcao", "atualizar");
 			request.setAttribute("contato", contato);
 			direcionar = "cadastrarContato.jsp";
-
-
 
 		} else if(opcao.equals("atualizar")){
 			
@@ -77,18 +72,11 @@ public class ContatoController extends HttpServlet {
 
 		}else {
 			
-			
 			Contato c = new Contato();	
-			
-			
-			
-			
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
-			
 			cs.cadastraContato(c);
-			
 			System.out.println("Cadastrar");
 			direcionar = "menu.jsp";
 		
