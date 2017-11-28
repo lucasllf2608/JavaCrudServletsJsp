@@ -45,7 +45,7 @@ input[type=email]:focus {
 			</br>
 			<div>
 				<label>Telefone:</label> </br>
-				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>" required /> 
+				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required /> 
 			</div>
 			</br>
 	<button type="submit" class="btn btn-primary">Cadastrar <i class="fa fa-plus-circle"></i> </button>
