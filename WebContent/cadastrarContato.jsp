@@ -48,7 +48,9 @@ input[type=email]:focus {
 				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required /> 
 			</div>
 			</br>
-	<button type="submit" class="btn btn-primary">Cadastrar <i class="fa fa-plus-circle"></i> </button>
+					<button type="submit" class="btn btn-primary"><c:out value="${opcao != null ? 'Atualizar ': 'Cadastrar '}"></c:out><i class="fa fa-plus-circle"></i> </button>
+					
+
 	<button id="cancelar" onclick="voltarMenu()">voltar <i class="fa fa-reply"></i></button>
 	</fieldset>		
 	</form>
