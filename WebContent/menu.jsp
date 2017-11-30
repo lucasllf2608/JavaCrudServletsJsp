@@ -79,7 +79,7 @@ tr:nth-child(even) {
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Telefone</th>
-				<th colspan="2">op&ccedil;&atilde;o</th>
+				<th colspan="2">Op&ccedil;&atilde;o</th>
 			</tr> 
 			<c:forEach var="contato" items="${contatos.listarContatos()}">
 			<tr>
@@ -87,8 +87,9 @@ tr:nth-child(even) {
 				<td>${contato.nome}</td>
 				<td>${contato.email}</td>
 				<td>${contato.telefone}</td>
-				<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>&nome=<c:out value="${contato.nome} "></c:out>&email=<c:out value="${contato.email} "></c:out>&telefone=<c:out value="${contato.telefone}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
-				<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
+				
+				<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
+				<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px" alt="teste"></i></a></td>
 			</tr>
 			</c:forEach>
 		</table>	
