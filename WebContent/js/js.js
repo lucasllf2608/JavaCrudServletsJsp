@@ -35,5 +35,5 @@ function mtel(v){
 }
 
 function cadastrado(){
-	alert('Contato cadastrado');
+	alert("Contado Salvo");
 }

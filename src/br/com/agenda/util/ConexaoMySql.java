@@ -22,7 +22,7 @@ public class ConexaoMySql {
 
 			String serverName = "localhost";
 			String dataBase = "crud";
-			String url = "jdbc:mysql://"+serverName +"/"+dataBase;
+			String url = "jdbc:mysql://" + serverName + "/" + dataBase;
 			String usuario = "root";
 			String password = "";
 			connection = DriverManager.getConnection(url, usuario, password);

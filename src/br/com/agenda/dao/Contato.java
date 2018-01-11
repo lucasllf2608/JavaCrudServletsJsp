@@ -1,11 +1,14 @@
 package br.com.agenda.dao;
 
+import java.util.Calendar;
+
 public class Contato {
 
 	private String nome;
 	private String email;
 	private String telefone;
 	private int id;
+	private Calendar dt_nasc;
 
 	public String getNome() {
 		return nome;
@@ -43,6 +46,14 @@ public class Contato {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return getNome()+"-"+getEmail()+"-"+getTelefone();
+	}
+
+	public Calendar getDt_nasc() {
+		return dt_nasc;
+	}
+
+	public void setDt_nasc(Calendar dt_nasc) {
+		this.dt_nasc = dt_nasc;
 	}
 
 }

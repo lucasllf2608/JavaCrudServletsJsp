@@ -2,7 +2,11 @@ package br.com.agenda.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,14 +35,15 @@ public class ContatoController extends HttpServlet {
 	}
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		
+
 		String opcao = request.getParameter("opcao");
 		String direcionar = "";
-		
-		if (opcao.equals("editar")){
-						
+
+		if (opcao.equals("editar")) {
+
 			System.out.println(opcao);
 			String id = request.getParameter("id");
 			System.out.println(id);
@@ -49,52 +54,64 @@ public class ContatoController extends HttpServlet {
 			request.setAttribute("contato", contato);
 			direcionar = "cadastrarContato.jsp";
 
-		} else if(opcao.equals("atualizar")){
-			
-			Contato c = new Contato();	
+		} else if (opcao.equals("atualizar")) {
+
+			Contato c = new Contato();
 			String id = request.getParameter("id");
-			System.out.println(id);	
+			System.out.println(id);
 			c.setId(Integer.parseInt(request.getParameter("id")));
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
-			c.setTelefone(request.getParameter("telefone"));	
+			c.setTelefone(request.getParameter("telefone"));
 			System.out.println(toString());
 			cs.atualizarContato(c);
 			direcionar = "menu.jsp";
-			
-		}else if (opcao.equals("excluir")) {
-			
+
+		} else if (opcao.equals("excluir")) {
+
 			System.out.println("chegou para excluir");
 			out.println(request.getParameter("id"));
 			String id = request.getParameter("id");
 			cs.excluirCadastro(id);
 
-		}else {
-			
-			Contato c = new Contato();	
+		} else {
+
+			Contato c = new Contato();
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
+			String dt_nasc = request.getParameter("dt_nasc");
+			Calendar dataNascimento = null;
+			
+			
+			try{
+				
+				Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dt_nasc);
+				dataNascimento = Calendar.getInstance();
+				dataNascimento.setTime(data);
+				
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			c.setDt_nasc(dataNascimento);	
 			cs.cadastraContato(c);
 			System.out.println("Cadastrar");
+			request.setAttribute("mensagem", "Salvo com sucesso");
 			direcionar = "menu.jsp";
-		
-			
-			
+
 		}
-		
-		
-		
+
 		RequestDispatcher view = request.getRequestDispatcher(direcionar);
 		view.forward(request, response);
 
 	}
-	
-	
-	public static ArrayList<Contato> listarContatos(){
+
+	public static ArrayList<Contato> listarContatos() {
 		ArrayList<Contato> contato = new ArrayList<>();
 		return contato = cs.listarContatos();
-	} 
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse

@@ -67,6 +67,7 @@ tr:nth-child(even) {
 	     <ul id="menu">
 		   <li><a href="menu.jsp">Menu</a></li>
 		   <li><a href="cadastrarContato.jsp?opcao=cadastrar">Novo Contato</a></li>
+		    <li><a href="#">Aniversários</a></li>
          </ul>
 	</div>	
 	<hr>
@@ -79,6 +80,7 @@ tr:nth-child(even) {
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Telefone</th>
+				<th>Data de Nascimento</th>
 				<th colspan="2">Op&ccedil;&atilde;o</th>
 			</tr> 
 			<c:forEach var="contato" items="${contatos.listarContatos()}">
@@ -86,6 +88,7 @@ tr:nth-child(even) {
 				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td>${contato.email}</td>
+				<td></td>
 				<td>${contato.telefone}</td>
 				
 				<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
