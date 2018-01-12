@@ -2,8 +2,8 @@ package br.com.agenda.service;
 
 import java.util.ArrayList;
 
-import br.com.agenda.dao.Contato;
 import br.com.agenda.dao.ContatoDao;
+import br.com.agenda.model.Contato;
 
 public class ContatoService {
 

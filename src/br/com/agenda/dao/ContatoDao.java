@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import br.com.agenda.model.Contato;
 import br.com.agenda.util.ConexaoMySql;
 
 public class ContatoDao {
@@ -25,6 +26,7 @@ public class ContatoDao {
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getTelefone());
+			stmt.setDate(4, contato.getDt_nasc());
 			stmt.execute();
 			stmt.close();
 			conexao().close();

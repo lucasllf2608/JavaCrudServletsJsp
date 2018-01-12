@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.agenda.dao.Contato;
+import br.com.agenda.model.Contato;
 import br.com.agenda.service.ContatoService;
 
 /**

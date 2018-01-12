@@ -1,4 +1,4 @@
-package br.com.agenda.dao;
+package br.com.agenda.model;
 
 import java.util.Calendar;
 
