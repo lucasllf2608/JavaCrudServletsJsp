@@ -2,8 +2,8 @@ package br.com.agenda.service;
 
 import java.util.ArrayList;
 
-import br.com.agenda.dao.Contato;
 import br.com.agenda.dao.ContatoDao;
+import br.com.agenda.model.Contato;
 
 public class ContatoService {
 
@@ -29,12 +29,10 @@ public class ContatoService {
 		return contato;
 
 	}
-	
-	
-	public void atualizarContato(Contato contato){
+
+	public void atualizarContato(Contato contato) {
 		dao.atualizarContato(contato);
-		
+
 	}
-	
 
 }
