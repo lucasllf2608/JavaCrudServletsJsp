@@ -3,7 +3,7 @@
 <%@page import="br.com.agenda.dao.ContatoDao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.agenda.util.ConexaoMySql"%>
-<%@page import="br.com.agenda.dao.Contato"%>
+<%@page import="br.com.agenda.model.Contato"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
