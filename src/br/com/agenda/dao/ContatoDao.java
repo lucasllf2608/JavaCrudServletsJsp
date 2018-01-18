@@ -21,7 +21,7 @@ public class ContatoDao {
 		conexao();
 
 		try {
-			String sql = "insert into contato (nome, email, telefone, dt_nasc) values (?,?,?,?)";
+			String sql = "insert into contato (nome, email, telefone, dt_nasc) values (?,?,?)";
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
