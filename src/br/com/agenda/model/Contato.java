@@ -45,7 +45,7 @@ public class Contato {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getNome()+"-"+getEmail()+"-"+getTelefone();
+		return getNome()+"-"+getEmail()+"-"+getTelefone()+" -"+getDt_nasc();
 	}
 
 	public Calendar getDt_nasc() {

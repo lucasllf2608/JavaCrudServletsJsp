@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +34,26 @@ public class ContatoController extends HttpServlet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		log("Iniciando a servlet");
+	}
+	
+	
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		super.destroy();
+		log("Encerrando a Servlet");
+	}
+	
+	
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -73,6 +94,7 @@ public class ContatoController extends HttpServlet {
 			out.println(request.getParameter("id"));
 			String id = request.getParameter("id");
 			cs.excluirCadastro(id);
+			destroy();
 
 		} else {
 
@@ -81,21 +103,20 @@ public class ContatoController extends HttpServlet {
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
 			String dt_nasc = request.getParameter("dt_nasc");
-			Calendar dataNascimento = null;
 			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Calendar calendar = Calendar.getInstance();
 			
-			try{
-				
-				Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dt_nasc);
-				dataNascimento = Calendar.getInstance();
-				dataNascimento.setTime(data);
+			try {
+				calendar.setTime(sdf.parse(dt_nasc));
+				System.out.println(new java.sql.Date(calendar.getTimeInMillis()));
+				c.setDt_nasc(calendar);
 				
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			c.setDt_nasc(dataNascimento);	
+	
 			cs.cadastraContato(c);
 			System.out.println("Cadastrar");
 			request.setAttribute("mensagem", "Salvo com sucesso");

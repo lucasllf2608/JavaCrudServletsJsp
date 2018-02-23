@@ -1,6 +1,8 @@
 package br.com.agenda.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.sql.Date;
 
 import br.com.agenda.dao.ContatoDao;
 import br.com.agenda.model.Contato;
@@ -8,10 +10,11 @@ import br.com.agenda.model.Contato;
 public class ContatoService {
 
 	static final ContatoDao dao = new ContatoDao();
+	private static ArrayList<Contato> contato;
 
 	public static ArrayList<Contato> listarContatos() {
 
-		ArrayList<Contato> contato = new ArrayList<>();
+		contato = new ArrayList<>();
 		return contato = dao.listarContatos();
 	}
 
@@ -34,5 +37,6 @@ public class ContatoService {
 		dao.atualizarContato(contato);
 
 	}
-
+	
+	
 }

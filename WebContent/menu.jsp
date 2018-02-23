@@ -88,9 +88,8 @@ tr:nth-child(even) {
 				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td>${contato.email}</td>
-				<td></td>
 				<td>${contato.telefone}</td>
-				
+				<td></td>
 				<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
 				<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px" alt="teste"></i></a></td>
 			</tr>

@@ -11,6 +11,9 @@
 <title>CRUD::Agenda</title>
 
 
+
+
+
 <style type="text/css">
 
 input[type=text]:focus {
@@ -27,6 +30,7 @@ input[type=email]:focus {
 </head>
 <body>
 
+
 <div>
 	<form method="post" action="ContatoController">
 		<fieldset>
@@ -35,22 +39,22 @@ input[type=email]:focus {
 		<input type="hidden" name="id" id="id"  value="<c:out value="${id}"/>">
 			<div>
 				<label>Nome:</label><br><br/>
-				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>" required >
+				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>" required="true" >
 			</div>
 			<br><br/>
 			<div>
 				<label>Email:</label><br><br/>
-				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>" required/>
+				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>" required="true"/>
 			</div>
 		<br><br/>
 			<div>
 				<label>Telefone:</label> <br><br/>
-				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required /> 
+				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required="true" /> 
 			</div>
 			<br/>
 			<div>
 			<label>Data de Nascimento:</label><br><br/>
-			<input type="text" name="dt_nasc" id="dt_nasc" value="<c:out value="${contato.dt_nasc}"/>"  onkeyup=" maxlength="8"  required />
+			<input type="text" name="dt_nasc" id="dt_nasc" value="<c:out value="${contato.dt_nasc}"/>"  onkeyup="soNumeros();"  maxlength="10"  required="true" />
 			</div>
 			<br/>
 					<button type="submit"  onclick="" class="btn btn-primary"><c:out value="${opcao != null ? 'Atualizar ': 'Cadastrar '}"></c:out><i class="fa fa-plus-circle"></i> </button>
