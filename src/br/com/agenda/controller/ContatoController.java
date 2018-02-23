@@ -113,7 +113,7 @@ public class ContatoController extends HttpServlet {
 				c.setDt_nasc(calendar);
 				
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 	
