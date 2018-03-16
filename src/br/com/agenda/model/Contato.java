@@ -8,7 +8,7 @@ public class Contato {
 	private String email;
 	private String telefone;
 	private int id;
-	private Calendar dt_nasc;
+	
 
 	public String getNome() {
 		return nome;
@@ -45,15 +45,9 @@ public class Contato {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getNome()+"-"+getEmail()+"-"+getTelefone()+" -"+getDt_nasc();
+		return getNome()+"-"+getEmail()+"-"+getTelefone();
 	}
 
-	public Calendar getDt_nasc() {
-		return dt_nasc;
-	}
 
-	public void setDt_nasc(Calendar dt_nasc) {
-		this.dt_nasc = dt_nasc;
-	}
 
 }

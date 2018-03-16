@@ -102,21 +102,7 @@ public class ContatoController extends HttpServlet {
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
-			String dt_nasc = request.getParameter("dt_nasc");
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			Calendar calendar = Calendar.getInstance();
-			
-			try {
-				calendar.setTime(sdf.parse(dt_nasc));
-				System.out.println(new java.sql.Date(calendar.getTimeInMillis()));
-				c.setDt_nasc(calendar);
-				
-			} catch (ParseException e) {
-				
-				e.printStackTrace();
-			}
-	
+
 			cs.cadastraContato(c);
 			System.out.println("Cadastrar");
 			request.setAttribute("mensagem", "Salvo com sucesso");
@@ -131,7 +117,11 @@ public class ContatoController extends HttpServlet {
 
 	public static ArrayList<Contato> listarContatos() {
 		ArrayList<Contato> contato = new ArrayList<>();
-		return contato = cs.listarContatos();
+		 contato = cs.listarContatos();
+		 
+		 System.out.println(contato.size());
+		 
+		return contato;
 	}
 
 	/**

@@ -33,7 +33,7 @@ public class ContatoDao {
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getTelefone());
-			stmt.setDate(4, new java.sql.Date(contato.getDt_nasc().getTimeInMillis()));
+			stmt.setDate(4, new Date(new java.util.Date().getTime()));
 			stmt.execute();
 			stmt.close();
 			conexao().close();
@@ -58,16 +58,11 @@ public class ContatoDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				
-				Calendar calendar = Calendar.getInstance();
-				
 				Contato c = new Contato();
 				c.setId(rs.getInt("id"));
 				c.setNome(rs.getString("nome"));
 				c.setEmail(rs.getString("email"));
 				c.setTelefone(rs.getString("telefone"));
-			    //c.setDt_nasc(uc.dataToCalendar(rs.getDate("dt_nasc")));
-				
-				System.out.println(c.toString());
 				contato.add(c);
 			}
 

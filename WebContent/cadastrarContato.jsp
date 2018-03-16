@@ -52,10 +52,6 @@ input[type=email]:focus {
 				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required="true" /> 
 			</div>
 			<br/>
-			<div>
-			<label>Data de Nascimento:</label><br><br/>
-			<input type="text" name="dt_nasc" id="dt_nasc" value="<c:out value="${contato.dt_nasc}"/>"  onkeyup="soNumeros();"  maxlength="10"  required="true" />
-			</div>
 			<br/>
 					<button type="submit"  onclick="" class="btn btn-primary"><c:out value="${opcao != null ? 'Atualizar ': 'Cadastrar '}"></c:out><i class="fa fa-plus-circle"></i> </button>
 					
