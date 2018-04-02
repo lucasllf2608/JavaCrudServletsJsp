@@ -30,6 +30,8 @@ input[type=email]:focus {
 </head>
 <body>
 
+<c:import url="menu.jsp"></c:import>
+
 
 <div>
 	<form method="post" action="ContatoController">
@@ -44,12 +46,18 @@ input[type=email]:focus {
 			<br><br/>
 			<div>
 				<label>Email:</label><br><br/>
-				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>" required="true"/>
+				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>"/>
 			</div>
 		<br><br/>
 			<div>
 				<label>Telefone:</label> <br><br/>
 				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required="true" /> 
+			</div>
+			<br/>
+			<br/>
+			<div>
+				<label>Data de Nascimento:</label> <br><br/>
+				<input type="text" name="nascimento" id="nascimento" maxlength="8"/> 
 			</div>
 			<br/>
 			<br/>

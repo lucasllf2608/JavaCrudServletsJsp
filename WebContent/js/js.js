@@ -3,7 +3,7 @@
  */
 
 function voltarMenu() {
-	window.location = "menu.jsp";
+	window.location = "contato.jsp";
 }
 
 function acessarCadastro() {

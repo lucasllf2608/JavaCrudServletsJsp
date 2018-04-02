@@ -67,10 +67,44 @@ tr:nth-child(even) {
 	     <h2><i class="fa fa-address-book-o" style="font-size:48px;color:#00aaa6"></i> Agenda de Contatos</h2>
 	     <ul id="menu">
 		   <li><a href="menu.jsp">Menu</a></li>
-		   <li><a href="contato.jsp">Contatos</a></li>
+		   <li><a href="cadastrarContato.jsp?opcao=cadastrar">Novo Contato</a></li>
 		    <li><a href="#">Aniversários</a></li>
          </ul>
 	</div>	
-	<hr>	
+	<hr>
+	<div>
+	
+		<jsp:useBean id="contatos" class="br.com.agenda.controller.ContatoController"></jsp:useBean>
+		<table>
+			<tr>
+				
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+				<th>Data de Nascimento</th>
+				<th colspan="2">Op&ccedil;&atilde;o</th>
+				
+			</tr> 
+			<c:forEach var="contato" items="${contatos.listarContatos()}">
+			<tr>
+				<td>${contato.id}</td>
+				<td>${contato.nome}</td>
+				<td>
+					<c:if test="${not empty contato.email}">
+						<a href='mailto:${contato.email}'>${contato.email}</a>	
+					</c:if>
+					<c:if test="${empty contato.email}">
+							E-mail não informado
+					</c:if>
+				</td>
+				<td>${contato.telefone}</td>
+				<td></td>
+				<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
+				<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px" alt="teste"></i></a></td>
+			</tr>
+			</c:forEach>
+		</table>	
+	</div>
 	</body>
 </html>
