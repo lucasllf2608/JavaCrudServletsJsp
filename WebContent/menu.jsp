@@ -66,9 +66,8 @@ tr:nth-child(even) {
 	 <div>
 	     <h2><i class="fa fa-address-book-o" style="font-size:48px;color:#00aaa6"></i> Agenda de Contatos</h2>
 	     <ul id="menu">
-		   <li><a href="menu.jsp">Menu</a></li>
+		   <li><a href="menu.jsp">Inicio</a></li>
 		   <li><a href="contato.jsp">Contatos</a></li>
-		    <li><a href="#">Aniversários</a></li>
          </ul>
 	</div>	
 	<hr>	

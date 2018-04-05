@@ -86,7 +86,7 @@ public class ContatoController extends HttpServlet {
 			c.setTelefone(request.getParameter("telefone"));
 			System.out.println(toString());
 			cs.atualizarContato(c);
-			direcionar = "menu.jsp";
+			direcionar = "contato.jsp";
 
 		} else if (opcao.equals("excluir")) {
 
@@ -102,11 +102,14 @@ public class ContatoController extends HttpServlet {
 			c.setNome(request.getParameter("nome"));
 			c.setEmail(request.getParameter("email"));
 			c.setTelefone(request.getParameter("telefone"));
+			
+			String data = request.getParameter("dt_nasc");
+			System.out.println(data);
 
 			cs.cadastraContato(c);
 			System.out.println("Cadastrar");
 			request.setAttribute("mensagem", "Salvo com sucesso");
-			direcionar = "menu.jsp";
+			direcionar = "contato.jsp";
 
 		}
 
@@ -118,9 +121,6 @@ public class ContatoController extends HttpServlet {
 	public static ArrayList<Contato> listarContatos() {
 		ArrayList<Contato> contato = new ArrayList<>();
 		 contato = cs.listarContatos();
-		 
-		 System.out.println(contato.size());
-		 
 		return contato;
 	}
 

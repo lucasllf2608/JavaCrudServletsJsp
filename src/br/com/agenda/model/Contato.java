@@ -8,7 +8,16 @@ public class Contato {
 	private String email;
 	private String telefone;
 	private int id;
+	private Calendar dt_nasc;
 	
+
+	public Calendar getDt_nasc() {
+		return dt_nasc;
+	}
+
+	public void setDt_nasc(Calendar dt_nasc) {
+		this.dt_nasc = dt_nasc;
+	}
 
 	public String getNome() {
 		return nome;

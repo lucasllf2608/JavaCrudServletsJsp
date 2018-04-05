@@ -57,7 +57,7 @@ input[type=email]:focus {
 			<br/>
 			<div>
 				<label>Data de Nascimento:</label> <br><br/>
-				<input type="text" name="nascimento" id="nascimento" maxlength="8"/> 
+				<input type="text" name="dt_nasc" id="dt_nasc" onkeyup="mascaraData(this);"/> 
 			</div>
 			<br/>
 			<br/>

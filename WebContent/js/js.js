@@ -4,6 +4,7 @@
 
 function voltarMenu() {
 	window.location = "contato.jsp";
+	
 }
 
 function acessarCadastro() {
@@ -55,9 +56,6 @@ function mascaraData(campoData){
                return true;
            }
       }
-
-
-
 
 
 

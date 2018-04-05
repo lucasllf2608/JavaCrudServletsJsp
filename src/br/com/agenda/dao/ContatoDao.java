@@ -63,6 +63,11 @@ public class ContatoDao {
 				c.setNome(rs.getString("nome"));
 				c.setEmail(rs.getString("email"));
 				c.setTelefone(rs.getString("telefone"));
+				
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("dt_nasc"));
+				c.setDt_nasc(data);
+				
 				contato.add(c);
 			}
 
