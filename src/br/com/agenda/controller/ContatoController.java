@@ -105,7 +105,21 @@ public class ContatoController extends HttpServlet {
 			
 			String data = request.getParameter("dt_nasc");
 			System.out.println(data);
-
+			
+			Calendar dtNascimento = null;
+			
+			
+			try {
+				Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+				dtNascimento = Calendar.getInstance();
+				dtNascimento.setTime(date);
+				
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			c.setDt_nasc(dtNascimento);
 			cs.cadastraContato(c);
 			System.out.println("Cadastrar");
 			request.setAttribute("mensagem", "Salvo com sucesso");

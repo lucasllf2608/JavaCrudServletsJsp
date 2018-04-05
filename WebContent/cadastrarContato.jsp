@@ -40,24 +40,31 @@ input[type=email]:focus {
 		<input type="hidden" name="opcao" id="opcao"  value="<c:out value="${opcao}"/>">
 		<input type="hidden" name="id" id="id"  value="<c:out value="${id}"/>">
 			<div>
-				<label>Nome:</label><br><br/>
+				<label for="nome">Nome:</label><br><br/>
 				<input type="text" name="nome" id="nome" value="<c:out value="${contato.nome}"/>" required="true" >
 			</div>
 			<br><br/>
 			<div>
-				<label>Email:</label><br><br/>
+				<label for="email">Email:</label><br><br/>
 				<input type="email" name="email" id="email" value="<c:out value="${contato.email}"/>"/>
 			</div>
 		<br><br/>
 			<div>
-				<label>Telefone:</label> <br><br/>
+				<label for="telefone">Telefone:</label> <br><br/>
 				<input type="text" name="telefone" id="telefone" value="<c:out value="${contato.telefone}"/>"  onkeyup="maskTelefone( this, mtel );" maxlength="15"  required="true" /> 
 			</div>
 			<br/>
 			<br/>
 			<div>
-				<label>Data de Nascimento:</label> <br><br/>
-				<input type="text" name="dt_nasc" id="dt_nasc" onkeyup="mascaraData(this);"/> 
+				<label for="dt_nasc">Data de Nascimento:</label> <br><br/>
+				 <fmt:formatDate value="${contato.dt_nasc.time}" pattern="dd/MM/yyyy" var="dt_nasc"/>
+				<input type="text" name="dt_nasc" id="dt_nasc" onkeyup="mascaraData(this);" value="<c:out value="${dt_nasc}" ></c:out>"/>
+				
+				<script type="text/javascript">
+					$("#dt_nasc").datepicker();
+			</script>
+				
+				 
 			</div>
 			<br/>
 			<br/>

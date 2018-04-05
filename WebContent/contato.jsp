@@ -69,7 +69,7 @@ float: right;
 	<body>
 	<div id="topo">	
 		<c:import url="menu.jsp"></c:import>
-	<div>
+	</div>
 	<div id="corpo">
 		<button id="novo" onclick="acessarCadastro()">Novo <i class="fa fa-user-plus"></i></button>
 	
@@ -98,7 +98,7 @@ float: right;
 					<td>${contato.telefone}</td>
 					<td> <fmt:formatDate value="${contato.dt_nasc.time}" pattern="dd/MM/yyyy"/></td>
 					<td><a href="ContatoController?opcao=editar&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-pencil-square-o" style="font-size:24px"></i></a></td>
-					<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px" alt="teste"></i></a></td>
+					<td><a href="ContatoController?opcao=excluir&id=<c:out value="${contato.id}"></c:out>"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
 				</tr>
 				</c:forEach>
 			</table>	

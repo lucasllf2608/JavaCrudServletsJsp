@@ -33,7 +33,7 @@ public class ContatoDao {
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getTelefone());
-			stmt.setDate(4, new Date(new java.util.Date().getTime()));
+			stmt.setDate(4, new Date(contato.getDt_nasc().getTimeInMillis()));
 			stmt.execute();
 			stmt.close();
 			conexao().close();
@@ -116,6 +116,9 @@ public class ContatoDao {
 					contato.setNome(rs.getString("nome"));
 					contato.setEmail(rs.getString("email"));
 					contato.setTelefone(rs.getString("telefone"));
+					Calendar data = Calendar.getInstance();
+					data.setTime(rs.getDate("dt_nasc"));
+					contato.setDt_nasc(data);
 					System.out.println("Pessoa encontrada...");
 				}
 
@@ -135,13 +138,14 @@ public class ContatoDao {
 		conexao();
 		try {
 
-			String sql = "update contato set nome = ?, email = ?, telefone = ? where id = ?";
+			String sql = "update contato set nome = ?, email = ?, telefone = ?, dt_nasc = ? where id = ?";
 
 			java.sql.PreparedStatement stmt = conexao().prepareStatement(sql);
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getTelefone());
-			stmt.setInt(4, contato.getId());
+			stmt.setDate(4, new Date(contato.getDt_nasc().getTimeInMillis()));
+			stmt.setInt(5, contato.getId());
 			stmt.execute();
 
 		} catch (Exception e) {
